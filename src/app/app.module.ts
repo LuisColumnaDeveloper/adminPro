@@ -15,17 +15,22 @@ import { RegisterComponent } from './login/register.component';
 //Modules
 import { PagesModule } from './pages/pages.module';
 
+//temporal
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     PagesModule,//se pone primero para dar prioridad a las rutas
     AppRoutingModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

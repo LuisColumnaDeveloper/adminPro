@@ -1,0 +1,14 @@
+<h3>{{ leyenda }} - {{porcentaje}}</h3>
+<div class="input-group">
+    <div class="input-group-append" id="button-addon4">
+        <button (click)="cambiarValor(-5)" class="btn btn-outline-primary" type="button">
+          <i class="mdi mdi-minus"></i>
+        </button>
+    </div>
+    <input #txtProgress name="porcentaje" [(ngModel)]="porcentaje" (ngModelChange)="onChange($event)" ng type="number" min="1" max="100" class="form-control">
+    <div (click)="cambiarValor(+5)" class="input-group-append" id="button-addon4">
+        <button class="btn btn-outline-primary" type="button">
+            <i class="mdi mdi-plus"></i>
+        </button>
+    </div>
+</div>
