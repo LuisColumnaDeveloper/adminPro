@@ -1972,7 +1972,7 @@ ul#themecolors li a {
 
 ul#themecolors li a.working:before {
     content: "\f00c";
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'FontAwesome';
     font-weight: 900;
     font-size: 18px;
     line-height: 50px;
