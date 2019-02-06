@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscriber, pipe, Subscription } from 'rxjs';
 
-import { retry } from "rxjs/operators";
+import { retry,map, filter } from "rxjs/operators";
 
 
 @Component({
@@ -9,13 +9,17 @@ import { retry } from "rxjs/operators";
   templateUrl: './rxjs.component.html',
   styles: []
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit,OnDestroy {
+
+  suscription:Subscription;
+
 
   constructor() { 
     
-    this.regresaObservable().pipe(
-      retry(2)
-    )
+    this.suscription = this.regresaObservable()
+    // .pipe(
+    //   retry(2)
+    // )
     .subscribe(
       numero => console.log('Subs',numero),
       error => console.error('Error',error),
@@ -27,28 +31,51 @@ export class RxjsComponent implements OnInit {
   ngOnInit() {
   }
 
-  regresaObservable():Observable< number >{
-    return  new Observable( (observer:Subscriber<number>) =>{
+  ngOnDestroy() {
+
+    console.log("La página se va a cerrar");
+    this.suscription.unsubscribe();
+
+  }
+
+  regresaObservable():Observable< any >{
+    return  new Observable( (observer:Subscriber<any>) =>{
 
       let contador =0;
       let intervalo = setInterval(()=>{
         
         contador += 1;
 
-        observer.next(contador );
+        const salida ={
+          valor:contador
+        };
 
-        if(contador===3){
-          clearInterval(intervalo);
-          observer.complete();
-        }
+        observer.next(salida );
 
-        if(contador===2){
-          //clearInterval(intervalo);
-          observer.error('Auxilio');
-        }
+        // if(contador===3){
+        //   clearInterval(intervalo);
+        //   observer.complete();
+        // }
+
+        // if(contador===2){
+        //   //clearInterval(intervalo);
+        //   observer.error('Auxilio');
+        // }
 
       },1000)
-    });
+
+
+    }).pipe(
+        map(resp => resp.valor),
+          filter((valor,index)=>{
+            if(valor % 2===1){
+              return true;
+    
+            }else{
+              return false
+            }
+          })
+      );
   }
 
 }

@@ -18,6 +18,7 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+
 @NgModule({
     declarations: [
         PagesComponent,
@@ -28,7 +29,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficoDonaComponent,
         AcountSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent        
     ],
     imports: [ 
         PagesRoutingModule,
