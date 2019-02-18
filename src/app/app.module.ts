@@ -14,7 +14,7 @@ import { PagesModule } from './pages/pages.module';
 import { ServiceModule } from './services/service.module';
 
 //temporal
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 //Servicios
 
@@ -33,6 +33,7 @@ import { FormsModule } from "@angular/forms";
     PagesModule,//se pone primero para dar prioridad a las rutas
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   providers: [],
