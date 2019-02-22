@@ -8,6 +8,7 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/service.index';
+import { ProfileComponent } from './profile/profile.component';
 const routesPages: Routes = [
     {
         path:'',
@@ -20,6 +21,7 @@ const routesPages: Routes = [
           {path:'promesas',component:PromesasComponent,data:{titulo:'Promesas'}},
           {path:'rxjs',component:RxjsComponent,data:{titulo:'Observables'}},
           {path:'acount-settings',component:AcountSettingsComponent,data:{titulo:'Ajustes del Tema'}},
+          {path:'perfil',component:ProfileComponent,data:{titulo:'Perfil de usuario'}},
           {path:'',redirectTo:'/dashboard',pathMatch:'full'}
         ]
       }

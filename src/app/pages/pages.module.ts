@@ -12,12 +12,18 @@ import { FormsModule } from "@angular/forms";
 
 import { ChartsModule } from "ng2-charts";
 
+//Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
+
 //temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 @NgModule({
     declarations: [
@@ -29,13 +35,15 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficoDonaComponent,
         AcountSettingsComponent,
         PromesasComponent,
-        RxjsComponent        
+        RxjsComponent,
+        ProfileComponent        
     ],
     imports: [ 
         PagesRoutingModule,
         SharedModule,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule
     ],
     exports: [
         //PagesComponent,
