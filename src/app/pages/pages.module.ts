@@ -22,6 +22,7 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -43,7 +44,8 @@ import { ProfileComponent } from './profile/profile.component';
         SharedModule,
         FormsModule,
         ChartsModule,
-        PipesModule
+        PipesModule,
+        CommonModule
     ],
     exports: [
         //PagesComponent,
