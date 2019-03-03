@@ -17,6 +17,7 @@ import { ServiceModule } from './services/service.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
+
 //Servicios
 
 
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    
     
   ],
   imports: [
