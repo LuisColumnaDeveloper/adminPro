@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from 'src/app/config/config';
 
 import { map } from 'rxjs/operators';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { pipe } from 'rxjs';
 import {  Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
