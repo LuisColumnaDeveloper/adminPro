@@ -11,11 +11,13 @@ import {
   UsuarioService,
   LoginGuardGuard,
   SubirArchivoService,
-
+  HospitalService,
+  MedicoService
  } 
  from "./service.index";
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
-import { HospitalService } from './hospital/hospital.service';
+
+
 
 @NgModule({
   declarations: [],
@@ -31,6 +33,7 @@ import { HospitalService } from './hospital/hospital.service';
     LoginGuardGuard,
     SubirArchivoService,
     ModalUploadService,
-    HospitalService ]
+    HospitalService,
+    MedicoService ]
 })
 export class ServiceModule { }

@@ -1,4 +1,4 @@
-import { from } from 'rxjs';
+export { MedicoService } from './medico/medico.service';
 
 export { LoginGuardGuard } from './guards/login-guard.guard';
 
