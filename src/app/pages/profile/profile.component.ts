@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
 
   guardar(usuario:Usuario){
 
-    console.log(usuario);
+    //console.log(usuario);
 
     this.usuario.nombre  = usuario.nombre;
     if(!this.usuario.google){

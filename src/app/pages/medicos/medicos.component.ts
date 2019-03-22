@@ -79,7 +79,7 @@ export class MedicosComponent implements OnInit {
   
     let desde = this.desde + valor;
   
-    console.log(desde);
+    //console.log(desde);
   
     if(desde>= this._medicoService.totalMedicos){
       return;

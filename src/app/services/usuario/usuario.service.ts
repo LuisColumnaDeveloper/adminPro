@@ -9,6 +9,7 @@ import { pipe, observable, Observable, throwError } from 'rxjs';
 import {  Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,34 @@ export class UsuarioService {
     ) { 
     
     this.cargarStorage();
+  }
+
+  renuevaToken(){
+    let url = URL_SERVICIOS+'/login/renuevaToken';
+    url += '?token=' + this.token;
+    return this.http.get(url)
+              pipe(
+                map((resp:any) => {
+                  this.token = resp.token ;
+                  localStorage.setItem('token', this.token);
+
+                  console.log("token renovado");
+                  
+
+                  return true;
+                })
+                ,catchError(err =>{
+                    this.router.navigate(['/login']);
+                      Swal.fire(
+                        'No se pudo renovar token!',
+                        'No fue posible renovar token',
+                        'error'
+                      )
+                      
+                      return  throwError(err);
+
+                    })
+              );
   }
 
   estaLogueado(){

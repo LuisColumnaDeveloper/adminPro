@@ -117,14 +117,14 @@ export class UsuariosComponent implements OnInit {
       confirmButtonText: 'Si, eliminar usuario!'
     }).then((result) => {
 
-        console.log(result);
+        //console.log(result);
         
       if (result.value) {
 
         this._usuariosService.borrarUsuario(usuario._id)
                     .subscribe(resp =>{
 
-                      console.log(resp);
+                      //console.log(resp);
 
                       Swal.fire(
                         'Usuario borrado!',

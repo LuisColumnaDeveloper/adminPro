@@ -67,14 +67,14 @@ export class HospitalesComponent implements OnInit {
       confirmButtonText: 'Si, eliminar hospital!'
     }).then((result) => {
 
-        console.log(result);
+        //console.log(result);
         
       if (result.value) {
 
         this._hospitalService.borrarHospital(hospital._id)
           .subscribe(resp =>{
 
-            console.log(resp);
+            //console.log(resp);
 
             Swal.fire(
               'Hspital borrado!',
@@ -129,7 +129,7 @@ export class HospitalesComponent implements OnInit {
   
     let desde = this.desde + valor;
   
-    console.log(desde);
+    //console.log(desde);
   
     if(desde>= this.totalRegistros){
       return;
@@ -160,7 +160,7 @@ export class HospitalesComponent implements OnInit {
 
       if(result.value){
        
-          console.log(result);
+          //console.log(result);
 
           this._hospitalService.crearHospital(result.value)
                     .subscribe(()=> this.cargarHospitales());

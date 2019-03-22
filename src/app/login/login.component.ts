@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
     this._usuarioService.login(usuario,forma.value.recuerdame)
                         .subscribe(correcto => this.router.navigate(['/dashboard']));
     
-    console.log(forma.value);
+    //console.log(forma.value);
     //this.router.navigate(['/dashboard']);
   }
 

@@ -47,8 +47,8 @@ export class MedicoComponent implements OnInit {
 
   guardarMedico(f:NgForm){
 
-    console.log(f.valid);
-    console.log(f.value);
+    // console.log(f.valid);
+    // console.log(f.value);
 
     if(f.invalid){
       return;
@@ -73,7 +73,7 @@ export class MedicoComponent implements OnInit {
       this._medicoService.cargarMedico( id )
               .subscribe(medico => {
 
-                console.log(medico);
+                //console.log(medico);
                 
                 this.medico = medico;
 
